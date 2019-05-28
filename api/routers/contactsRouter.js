@@ -48,7 +48,30 @@ router.get("/:id", async (req, res) => {
 });
 
 //============================Update Router
-router.put("/", async (req, res) => {});
+router.put("/", async (req, res) => {
+    const changes = req.body;
+
+    if (changes.name) {
+      try {
+        const updated = await db.update(req.params.id, changes);
+        if (updated) {
+          res.status(200).json(updated);
+        } else {
+          res.status(404).json({
+            message: "That contact does not exist"
+          });
+        }
+      } catch (error) {
+        res
+          .status(500)
+          .json({ message: "We ran into an error updating the contact" });
+      }
+    } else {
+      res.status(400).json({
+        message: "Please provide the name of the contact"
+      });
+    }
+});
 
 //============================Delete Router
 router.delete("/", async (req, res) => {});
