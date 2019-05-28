@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
 const tokenService = require('../auth/tokenService');
-const db = require('usersModel') //...needs to be written
+const db = require('../models/usersModel');
 
 //=========================================== Register API
 router.post('/register', (req, res) => {

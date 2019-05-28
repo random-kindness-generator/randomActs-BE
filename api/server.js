@@ -1,7 +1,7 @@
 const express = require("express");
 const configureMiddleware = require('./middleware/serverSetup');
 const authRouter = require('./auth/authRouter');
-const contactsRouter = require('./routers/contactsRouter')
+const contactsRouter = require('./routers/contactsRouter');
 
 const server = express();
 configureMiddleware(server);
