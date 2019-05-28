@@ -23,6 +23,7 @@
 	},
 	"homepage": "https://github.com/random-kindness-generator/randomActs-BE#readme",
 	"devDependencies": {
+		"cross-env": "^5.2.0",
 		"jest": "^23.6.0",
 		"supertest": "^3.3.0"
 	},
