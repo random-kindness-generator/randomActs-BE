@@ -11,6 +11,13 @@ exports.up = function(knex, Promise) {
       tbl.string("group", 255);
       tbl.string("notes", 500);
 
+      tbl
+      .integer('user_id')
+      .unsigned()
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE')
     });
   };
   
