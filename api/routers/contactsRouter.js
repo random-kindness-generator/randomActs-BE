@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("../models.contactModel");
+const db = require("../models/contactsModel");
 
 //============================Create Router
 router.post("/", async (req, res) => {

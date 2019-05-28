@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
   });
 
 //=========================================== Login API
-rrouter.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
     let { username, password } = req.body;
   
     db.findBy({ username })
