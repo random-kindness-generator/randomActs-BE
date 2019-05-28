@@ -26,6 +26,7 @@
 		"cross-env": "^5.2.0",
 		"jest": "^23.6.0",
 		"knex-cleaner": "^1.1.4",
+		"nodemon": "^1.19.1",
 		"supertest": "^3.3.0"
 	},
 	"dependencies": {
