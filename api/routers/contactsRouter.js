@@ -74,6 +74,21 @@ router.put("/", async (req, res) => {
 });
 
 //============================Delete Router
-router.delete("/", async (req, res) => {});
+router.delete("/", async (req, res) => {
+    try {
+        const count = await db.remove(req.params.id);
+        if (count > 0) {
+          res.status(204).end();
+        } else {
+          res.status(404).json({
+            message: "That contact does not exist, perhaps they were deleted already"
+          });
+        }
+      } catch (error) {
+        res
+          .status(500)
+          .json({ message: "We ran into an error removing the contact" });
+      }
+});
 
 module.exports = router;
