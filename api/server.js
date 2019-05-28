@@ -1,10 +1,9 @@
 const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet")
+const configureMiddleware = require('./middleware.js');
 
 const server = express();
 
-server.use(express.json(), helmet(), helmet(), morgan('dev'));
+configureMiddleware(server);
 
 server.get("/", async (req, res) => {
   res.status(200).json({ message: "Welcome yo" });
