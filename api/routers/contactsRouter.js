@@ -32,7 +32,20 @@ router.get("/", async (req, res) => {
 });
 
 //-----------------------Read By Id
-router.get("/:id", async (req, res) => {});
+router.get("/:id", async (req, res) => {
+    try {
+        const contact = await db.findById(req.params.id);
+        if (contact) {
+          res.status(200).json(contact);
+        } else {
+          res.status(404).json({ message: "We could not find the contact" });
+        }
+      } catch (error) {
+        res
+          .status(500)
+          .json({ message: "We ran into an error retrieving the contact" });
+      }
+});
 
 //============================Update Router
 router.put("/", async (req, res) => {});
