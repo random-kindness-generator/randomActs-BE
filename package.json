@@ -1,12 +1,14 @@
     
 {
-	"name": "testingserver",
+	"name": "random-acts-be",
 	"version": "1.0.0",
-	"description": "Server Testing Project",
+	"description": "Server for Random Acts App Project",
 	"main": "server.js",
-	"scripts": {
-		"test": "jest --watch --verbose"
-	},
+    "scripts": {
+        "server": "nodemon index.js",
+        "test": "cross-env DB_ENV=testing jest --watch --verbose",
+        "start": "node index.js"
+      },
 	"jest": {
 		"testEnvironment": "node"
 	},
@@ -15,7 +17,7 @@
 		"url": "git+https://github.com/random-kindness-generator/randomActs-BE.git"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Ethan Baugher",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/random-kindness-generator/randomActs-BE/issues"
