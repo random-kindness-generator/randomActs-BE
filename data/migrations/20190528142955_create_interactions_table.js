@@ -2,7 +2,8 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable("interactions", tbl => {
       tbl.increments();
   
-      tbl.string("name", 255).notNullable();
+      tbl.string("contact", 255).notNullable();
+      tbl.string("action", 255).notNullable();
     });
   };
   
