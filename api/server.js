@@ -1,5 +1,5 @@
 const express = require("express");
-const configureMiddleware = require('./middleware.js');
+const configureMiddleware = require('./middleware/serverSetup');
 const authRouter = require('./auth/authRouter');
 
 const server = express();
