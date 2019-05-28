@@ -1,0 +1,31 @@
+    
+{
+	"name": "testingserver",
+	"version": "1.0.0",
+	"description": "Server Testing Project",
+	"main": "server.js",
+	"scripts": {
+		"test": "jest --watch --verbose"
+	},
+	"jest": {
+		"testEnvironment": "node"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/random-kindness-generator/randomActs-BE.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/random-kindness-generator/randomActs-BE/issues"
+	},
+	"homepage": "https://github.com/random-kindness-generator/randomActs-BE#readme",
+	"devDependencies": {
+		"jest": "^23.6.0",
+		"supertest": "^3.3.0"
+	},
+	"dependencies": {
+		"express": "^4.16.4"
+	}
+}
