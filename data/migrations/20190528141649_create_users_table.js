@@ -5,9 +5,9 @@ exports.up = function(knex, Promise) {
       tbl.string("username", 128).notNullable().unique();
       tbl.string("password", 255).notNullable();
 
-      tbl.string("name", 255).notNullable();
+      tbl.string("name", 255);
       tbl.string("phone", 255);
-      tbl.string("email", 255).notNullable();
+      tbl.string("email", 255);
       tbl.string("address", 500);
     });
   };

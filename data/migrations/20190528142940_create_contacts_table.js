@@ -4,10 +4,8 @@ exports.up = function(knex, Promise) {
   
       tbl.string("name", 255).notNullable();
       tbl.string("phone", 255);
-      tbl.string("email", 255).notNullable();
-      tbl.string("password", 255).notNullable();
+      tbl.string("email", 255);
       tbl.string("address", 500);
-      tbl.string("user", 255).notNullable();
       tbl.string("group", 255);
       tbl.string("notes", 500);
 
