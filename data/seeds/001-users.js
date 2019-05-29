@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
     address: "123 Nice Drive",
 },
 {
-  id: 2,
+  id: 3,
   username: "niceperson",
   password: "password",
   name: "Mr. Nice Person",

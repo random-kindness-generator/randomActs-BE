@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex("users").insert([
+  return knex("actions").insert([
     { id: 1, action: "Pay it forward" },
     { id: 2, action: "Mow their yard" },
     { id: 3, action: "Take the trash out" },
