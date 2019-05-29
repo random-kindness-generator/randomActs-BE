@@ -1,6 +1,7 @@
 const express = require("express");
 
-// db is going to be the userModel.js import
+const db = require("../models/userModel.js")
+const contactDB = require("../models/contactsModel.js")
 
 const router = express.Router();
 
@@ -11,6 +12,33 @@ router.get("/", (req, res) => {
     })
     .catch(err => res.status(500).json(err));
 });
+
+router.get("/:id", (req, res) => {
+    const { userId } = req.params;
+    db.findById(userId)
+        .then(user => {
+            if (user) {
+                res.status(200).json(user);
+            } else {
+                res.status(404).json({ message: "user not found" });
+            }
+        })
+})
+
+// For this route, we will be pulling up the contacts that match the id of the user
+
+router.get("/:id/contacts", (req, res) => {
+    const { userId } = req.params;
+    db.findById(userId)
+        .then(user => {
+            if (user) {
+                // This is where we will call our contacts helper function
+                // contactDB.findByUser(userId)
+            } else {
+                res.status(404).json({ message: "user not found" });
+            }
+        })
+})
 
 router.get("/:email", (req, res) => {
   const { email } = req.params;
