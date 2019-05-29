@@ -3,7 +3,7 @@ exports.seed = function(knex, Promise) {
     {
       id: 1,
       username: "niceguy",
-      password: "password",
+      password: "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS", //password
       name: "Mr. Nice Guy",
       phone: "1234567890",
       email: "test@email.com",
@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
   {
     id: 2,
     username: "nicegal",
-    password: "password",
+    password: "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS", //password
     name: "Mr. Nice Gal",
     phone: "1234567890",
     email: "test@email.com",
@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
 {
   id: 3,
   username: "niceperson",
-  password: "password",
+  password: "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS", //password
   name: "Mr. Nice Person",
   phone: "1234567890",
   email: "test@email.com",
