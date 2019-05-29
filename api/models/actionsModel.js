@@ -9,23 +9,23 @@ module.exports = {
 };
 
 function find() {
-  return db(`contacts`);
+  return db(`actions`);
 }
 function findById(id) {
-  return db(`contacts`).where({ id });
+  return db(`actions`).where({ id });
 }
-async function add(user) {
-  const [id] = await db('contacts').insert(user);
+async function add(action) {
+  const [id] = await db('actions').insert(action);
 
   return findById(id);
 }
 function update(id, changes) {
-  return db(`contacts`)
+  return db(`actions`)
     .where({ id })
     .update(changes);
 }
 function remove(id) {
-  return db(`contacts`)
+  return db(`actions`)
     .where({ id })
     .delete();
 }
