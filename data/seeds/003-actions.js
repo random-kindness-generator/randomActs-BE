@@ -1,13 +1,44 @@
-
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
+  return knex("users").insert([
+    {
+      id: 1,
+      action: "pay it forward"
+    },
+    {
+      id: 2,
+      action: "pay it forward"
+    },
+    {
+      id: 3,
+      action: "pay it forward"
+    },
+    {
+      id: 4,
+      action: "pay it forward"
+    },
+    {
+      id: 5,
+      action: "pay it forward"
+    },
+    {
+      id: 6,
+      action: "pay it forward"
+    },
+    {
+      id: 7,
+      action: "pay it forward"
+    },
+    {
+      id: 8,
+      action: "pay it forward"
+    },
+    {
+      id: 9,
+      action: "pay it forward"
+    },
+    {
+      id: 10,
+      action: "pay it forward"
+    }
+  ]);
 };
