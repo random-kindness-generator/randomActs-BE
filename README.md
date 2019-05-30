@@ -36,3 +36,95 @@
 - cross-env - Allows for different env variables for testing / development.
 - jest - Test-runner for model and endpoint testing.
 - supertest - Additional testing methods for endpoints.
+
+# Project Summary <a name="projectSummary"></a>
+
+We struggle to .....
+
+# Endpoints (for frontend usage) <a name="frontend"></a>
+
+### Global CRUD Rules
+
+- Authentication: **All** endpoints **except** api/auth/register and api/auth/login require a valid token to be passed in the request header.
+
+---
+
+# api/auth <a name="authEndpoints"></a>
+
+---
+
+#### POST `api/login`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+Header: default
+URL Params: none
+Body:
+{
+    username: 'niceguy',
+    password: 'password'
+}
+```
+
+##### Example Response:
+
+```
+{
+    "message": "Welcome niceguy!",
+    "userId": 1,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+---
+
+#### POST `api/auth/register`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string, up to 64 characters
+password: string, up to 64 characters
+
+##### Example Request:
+
+```
+Header: default
+URL Params: none
+Body:
+{
+    "username": "nicecheck6",
+    "password": "$2a$10$lCXGz79FPjlQzXNO3G3Q7elRGu.5ok6pWiEcA2PWPNJbiXHsSYstu",
+    "name": "null",
+    "phone": "null",
+    "email": "null",
+    "address": "null"
+}
+```
+
+##### Example Response:
+
+```
+{
+    "id": 8,
+    "username": "nicecheck6",
+    "password": "$2a$10$lCXGz79FPjlQzXNO3G3Q7elRGu.5ok6pWiEcA2PWPNJbiXHsSYstu",
+    "name": "null",
+    "phone": "null",
+    "email": "null",
+    "address": "null"
+}
+```
+
+---
