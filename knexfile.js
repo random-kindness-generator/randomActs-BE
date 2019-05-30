@@ -31,6 +31,7 @@ module.exports = {
       client: "pg",
       connection: dbConnection,
       useNullAsDefault: true,
-      migrations: "./data/migrations"
+      migrations: __dirname + '/data/migrations',
+      seeds: __dirname + '/data/seeds'
     }
   };
