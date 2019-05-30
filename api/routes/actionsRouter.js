@@ -4,8 +4,8 @@ const db = require("../models/actionsModel");
 //============================Create Router
 router.post("/", async (req, res) => {
   const action = req.body;
-
-  if (action.name) {
+// possible trouble area, error on create
+  if (action) {
     try {
       const inserted = await db.add(action);
       res.status(201).json(inserted);

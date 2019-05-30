@@ -14,6 +14,7 @@ function find() {
 function findById(id) {
   return db(`contacts`).where({ id });
 }
+
 async function add(user) {
   const [id] = await db('contacts').insert(user);
 

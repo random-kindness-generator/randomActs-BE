@@ -14,8 +14,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-    const { userId } = req.params;
-    db.findById(userId)
+    const { id } = req.params;
+    db.findById(id)
         .then(user => {
             if (user) {
                 res.status(200).json(user);
@@ -28,8 +28,8 @@ router.get("/:id", (req, res) => {
 // For this route, we will be pulling up the contacts that match the id of the user
 
 router.get("/:id/contacts", (req, res) => {
-    const { userId } = req.params;
-    db.findById(userId)
+    const { id } = req.params;
+    db.findById(id)
         .then(user => {
             if (user) {
                 // This is where we will call our contacts helper function
@@ -59,8 +59,8 @@ router.get("/:email", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const userData = req.body;
-    const checkEmail = await db.findByEmail(userData.email);
-    if (!checkEmail) {
+    
+    if (userData) {
       try {
         const userId = await db.add(userData);
         // const user = await db.findById(userId[0]);
