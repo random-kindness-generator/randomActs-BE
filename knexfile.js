@@ -1,3 +1,4 @@
+require("dotenv").config()
 const dbConnection = process.env.DATABASE_URL
 
 module.exports = {
@@ -31,7 +32,7 @@ module.exports = {
       client: "pg",
       connection: dbConnection,
       useNullAsDefault: true,
-      migrations: __dirname + '/data/migrations',
-      seeds: __dirname + '/data/seeds'
+      migrations: { directory: __dirname + '/data/migrations' }, 
+      seeds: { directory: __dirname + '/data/seeds' }
     }
   };
