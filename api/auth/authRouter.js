@@ -5,6 +5,7 @@ const tokenService = require('../auth/tokenService');
 const db = require('../models/userModel');
 
 //=========================================== Register API
+//turn this into async
 router.post('/register', (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 10);
@@ -22,14 +23,15 @@ router.post('/register', (req, res) => {
 //=========================================== Login API
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
-  
+  //added user id to returned info
     db.findBy({ username })
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
           const token = tokenService.generateToken(user);
+          const userId = user.id;
           res.status(200).json({
-            message: `Welcome ${user.username}!`,
+            message: `Welcome ${user.username}!`, userId,
             token
           });
         } else {
