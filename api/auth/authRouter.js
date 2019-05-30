@@ -23,7 +23,7 @@ router.post('/register', (req, res) => {
 //=========================================== Login API
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
-  
+  //added user id to returned info
     db.findBy({ username })
       .first()
       .then(user => {
