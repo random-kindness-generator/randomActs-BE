@@ -14,7 +14,7 @@ server.use('/api/actions', actionsRouter);
 server.use('/api/users', usersRouter)
 
 server.get("/", async (req, res) => {
-  res.status(200).json({ message: "Welcome yo" });
+  res.status(200).json({ message: "Server running...." });
 });
 
 module.exports = server
