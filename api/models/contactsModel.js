@@ -5,6 +5,7 @@ module.exports = {
   findById,
   findByUser,
   add,
+  addContact,
   update,
   remove
 };
@@ -32,4 +33,7 @@ function remove(id) {
   return db(`contacts`)
     .where({ id })
     .delete();
+}
+function addContact(contact) {
+    return db('contacts').insert(contact).into('contacts')
 }

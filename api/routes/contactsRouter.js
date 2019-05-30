@@ -9,7 +9,7 @@ router.post("/", restricted, async (req, res) => {
 
   if (contact.name) {
     try {
-      const inserted = await db.add(contact);
+      const inserted = await db.addContact(contact);
       res.status(201).json(inserted);
     } catch (error) {
       res
