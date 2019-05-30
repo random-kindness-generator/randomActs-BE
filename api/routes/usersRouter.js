@@ -16,12 +16,18 @@ router.get("/", restricted, (req, res) => {
 });
 
 router.get("/:id", restricted, (req, res) => {
-  const { userId } = req.params;
-  db.findById(userId).then(user => {
+  const user_id = req.params.id;
+  db.findById(user_id)
+  .then(user => {
     if (user) {
       res.status(200).json(user);
     } else {
       res.status(404).json({ message: "user not found" });
+    }
+  })
+  .catch(error => {
+    if (error) {
+      res.status(500).json({ message: `Error : ${error}` })
     }
   });
 });
@@ -104,7 +110,7 @@ router.delete("/:id", restricted, (req, res) => {
 });
 
 router.put("/:id", restricted, (req, res) => {
-  const { id } = req.params;
+  const id = req.params.id;
   const changes = req.body;
   db.update(id, changes)
     .then(count => {
