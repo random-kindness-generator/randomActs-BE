@@ -14,10 +14,8 @@ function find() {
 function findById(id) {
   return db(`actions`).where({ id });
 }
-async function add(action) {
-  const [id] = await db('actions').insert(action);
-
-  return findById(id);
+function add(action) {
+  return db('actions').insert(action);
 }
 function update(id, changes) {
   return db(`actions`)

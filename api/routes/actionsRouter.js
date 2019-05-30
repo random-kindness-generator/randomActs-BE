@@ -5,7 +5,7 @@ const db = require("../models/actionsModel");
 router.post("/", async (req, res) => {
   const action = req.body;
 
-  if (action.name) {
+  if (action.action) {
     try {
       const inserted = await db.add(action);
       res.status(201).json(inserted);
@@ -51,7 +51,7 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
     const changes = req.body;
 
-    if (changes.name) {
+    if (changes.action) {
       try {
         const updated = await db.update(req.params.id, changes);
         if (updated) {
