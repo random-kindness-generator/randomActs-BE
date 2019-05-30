@@ -27,11 +27,11 @@ function findByEmail(email) {
     .where({ email })
     .first();
 }
+//changed this to async
+async function add(user) {
+  const [id] = await db('users').insert(user);
 
-function add(user) {
-  return db("users")
-    .insert(user)
-    .into("users");
+  return findById(id);
 }
 
 function update(id, changes) {
