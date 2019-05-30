@@ -38,6 +38,9 @@ router.get("/:id/contacts", (req, res) => {
                 res.status(404).json({ message: "user not found" });
             }
         })
+        .catch(error => {
+          res.status(500).json({ message: "Mistakes were made"})
+        })
 })
 
 router.get("/:email", (req, res) => {
