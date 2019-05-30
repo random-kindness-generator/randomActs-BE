@@ -7,7 +7,7 @@ const contactDB = require("../models/contactsModel.js");
 
 const router = express.Router();
 
-router.get("/", restricted, (req, res) => {
+router.get("/", (req, res) => {
   db.find()
     .then(users => {
       res.status(200).json(users);
