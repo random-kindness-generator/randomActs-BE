@@ -1,13 +1,13 @@
 const express = require("express");
+const restricted = require("../middleware/restricted");
+// const usercheck = require("../middleware/usercheck")
 
-const db = require("../models/userModel.js")
-const contactDB = require("../models/contactsModel.js")
+const db = require("../models/userModel.js");
+const contactDB = require("../models/contactsModel.js");
 
 const router = express.Router();
 
-
-
-router.get("/", (req, res) => {
+router.get("/", restricted, (req, res) => {
   db.find()
     .then(users => {
       res.status(200).json(users);
@@ -15,34 +15,48 @@ router.get("/", (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-router.get("/:id", (req, res) => {
-    const { userId } = req.params;
-    db.findById(userId)
-        .then(user => {
-            if (user) {
-                res.status(200).json(user);
-            } else {
-                res.status(404).json({ message: "user not found" });
-            }
-        })
-})
+router.get("/:id", restricted, (req, res) => {
+  const user_id = req.params.id;
+  db.findById(user_id)
+  .then(user => {
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: "user not found" });
+    }
+  })
+  .catch(error => {
+    if (error) {
+      res.status(500).json({ message: `Error : ${error}` })
+    }
+  });
+});
 
 // For this route, we will be pulling up the contacts that match the id of the user
 
-router.get("/:id/contacts", (req, res) => {
-    const { userId } = req.params;
-    db.findById(userId)
-        .then(user => {
-            if (user) {
-                // This is where we will call our contacts helper function
-                // contactDB.findByUser(userId)
-            } else {
-                res.status(404).json({ message: "user not found" });
-            }
-        })
-})
+router.get("/:id/contacts", restricted, async (req, res) => {
+  const user_id = req.params.id;
+  contactDB
+    .findByUser(user_id)
+    .then(contacts => {
+      if (contacts) {
+        res.status(200).json(contacts);
+      } else {
+        res
+          .status(404)
+          .json({
+            Message: "Contacts lost like the Donner party...sad indeed"
+          });
+      }
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ message: ` The Contacts seems to be lost try again` });
+    });
+});
 
-router.get("/:email", (req, res) => {
+router.get("/:email", restricted, (req, res) => {
   const { email } = req.params;
 
   db.findByEmail(email)
@@ -58,7 +72,7 @@ router.get("/:email", (req, res) => {
     });
 });
 
-router.post("/", async (req, res) => {
+router.post("/", restricted, async (req, res) => {
   try {
     const userData = req.body;
     const checkEmail = await db.findByEmail(userData.email);
@@ -68,9 +82,8 @@ router.post("/", async (req, res) => {
         // const user = await db.findById(userId[0]);
         res.status(201).json(userId);
       } catch (error) {
-        res.status(500).json({error: "Unable to add user to database"})
+        res.status(500).json({ error: "Unable to add user to database" });
       }
-      
     } else {
       res.status(200).json(checkEmail);
     }
@@ -82,7 +95,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", restricted, (req, res) => {
   db.remove(req.params.id)
     .then(count => {
       if (count < 1) {
@@ -96,8 +109,8 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
-  const { id } = req.params;
+router.put("/:id", restricted, (req, res) => {
+  const id = req.params.id;
   const changes = req.body;
   db.update(id, changes)
     .then(count => {

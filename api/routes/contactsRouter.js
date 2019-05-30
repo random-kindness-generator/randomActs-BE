@@ -1,8 +1,10 @@
 const router = require("express").Router();
+const restricted = require("../middleware/restricted");
+const usercheck = require("../middleware/usercheck");
 const db = require("../models/contactsModel");
 
 //============================Create Router
-router.post("/", async (req, res) => {
+router.post("/", restricted, async (req, res) => {
   const contact = req.body;
 
   if (contact.name) {
@@ -20,7 +22,7 @@ router.post("/", async (req, res) => {
 });
 
 //============================Read Router
-router.get("/", async (req, res) => {
+router.get("/", restricted, async (req, res) => {
   try {
     const contacts = await db.find();
     res.status(200).json(contacts);
@@ -32,7 +34,7 @@ router.get("/", async (req, res) => {
 });
 
 //-----------------------Read By Id
-router.get("/:id", async (req, res) => {
+router.get("/:id", restricted, async (req, res) => {
     try {
         const contact = await db.findById(req.params.id);
         if (contact) {
@@ -48,7 +50,7 @@ router.get("/:id", async (req, res) => {
 });
 
 //============================Update Router
-router.put("/:id", async (req, res) => {
+router.put("/:id", restricted, async (req, res) => {
     const changes = req.body;
 
     if (changes.name) {
@@ -74,7 +76,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //============================Delete Router
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", restricted, async (req, res) => {
     try {
         const count = await db.remove(req.params.id);
         if (count > 0) {
