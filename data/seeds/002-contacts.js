@@ -18,7 +18,7 @@ exports.seed = function(knex, Promise) {
       address: "123 street",
       group: "friends",
       notes: "likes wood working",
-      user_id: 1
+      user_id: 2
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ exports.seed = function(knex, Promise) {
       address: "123 street",
       group: "work",
       notes: "Gamer, loves MMORPG's",
-      user_id: 1
+      user_id: 3
     },
     {
       id: 5,
