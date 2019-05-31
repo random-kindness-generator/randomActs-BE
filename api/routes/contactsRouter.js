@@ -5,22 +5,14 @@ const db = require("../models/contactsModel");
 
 //============================Create Router
 router.post("/", restricted, async (req, res) => {
-  const contact = req.body;
-
-  if (contact.name) {
+  
     try {
+      const contact = req.body;
       const inserted = await db.addContact(contact);
-      res.status(201).json(inserted);
+      res.status(201).json({ message: "Contact created" })
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: "We ran into an error creating the contact" });
+      res.status(500).json({ error: "A problem occured"})
     }
-  } else {
-    res.status(400).json({ message: "Please provide name of the contact" });
-  }
-});
-
 //============================Read Router
 router.get("/", restricted, async (req, res) => {
   try {
