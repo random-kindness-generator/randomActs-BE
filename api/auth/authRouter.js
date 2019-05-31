@@ -6,19 +6,28 @@ const db = require('../models/userModel');
 
 //=========================================== Register API
 //turn this into async
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
+  try {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 10);
     user.password = hash;
-  
-    db.add(user)
-      .then(saved => {
-        res.status(201).json(saved, user);
-      })
-      .catch(error => {
-        res.status(500).json(error);
-      });
-  });
+    id = await db.add(user);
+    res.status(201).json({message: "User created with id of ", id})
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+    
+  // deprecated code
+  //   db.add(user)
+  //     .then(saved => {
+  //       res.status(201).json(saved, user);
+  //     })
+  //     .catch(error => {
+  //       res.status(500).json(error);
+  //     });
+  // });
 
 //=========================================== Login API
 router.post('/login', (req, res) => {
