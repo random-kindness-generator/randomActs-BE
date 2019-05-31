@@ -46,7 +46,7 @@ router.get("/:id", restricted, async (req, res) => {
 router.put("/:id", restricted, async (req, res) => {
     const changes = req.body;
 
-    if (changes.name) {
+    if (changes) {
       try {
         const updated = await db.update(req.params.id, changes);
         if (updated) {
@@ -63,7 +63,7 @@ router.put("/:id", restricted, async (req, res) => {
       }
     } else {
       res.status(400).json({
-        message: "Please provide the name of the contact"
+        message: "Please provide changes to update the contact"
       });
     }
 });
