@@ -208,12 +208,12 @@ Body: none
 ```
 ---
 
-#### PUT `api/`
+#### PUT `api/users/:id`
 
 ##### Required (unless marked optional):
 
 **Header**: default
-**URL Params**: none
+**URL Params**:user id
 **Body**:
 username: string
 password: string
@@ -251,7 +251,7 @@ Body:
 ##### Required (unless marked optional):
 
 **Header**: default
-**URL Params**: none
+**URL Params**: user id
 **Body**: none
 
 ##### Example Request:
@@ -306,9 +306,7 @@ password: string
 
 **Header**: default
 **URL Params**: none
-**Body**:
-username: string
-password: string
+**Body**: none
 
 ##### Example Request:
 

@@ -1,49 +1,125 @@
-User api endpoints
-NOTE: Username and password are required; name, phone, email, and address are optional fields
-1) POST `${URL}/api/users`, `{
-    "username": "",
-    "password": ""
-}`
+ # Auth api endpoints
 
- 2) GET `${URL}/api/users`, `{
-    headers: {'Authorization': token}
-}`
+## REGISTER API 
 
- 3) GET `${URL}/api/users/${UserId}`, `{
-    headers: {`Authorization`: token}
-}`
+##### Example Data:
+ ```
+ registerInfo ={
+    "username": "string", <-required
+    "password": "string", <-required
+    "name": "string",
+    "phone": "string",
+    "email": "string",
+    "address": "string"
+ }
+ ```
 
- 4) GET `${URL}/api/users/${UserId}/contacts`, `{
-    headers: {`Authorization`: token}
-}`
+### POST
 
- 5) UPDATE `${URL}/api/users/${UserId}`, `{
-    updated info = {
-        "username": "",
-        "password": "",
-        "name": "",
-        "phone": "",
-        "email": "",
-        "address": ""
-    }
+`${URL}/api/register, 
+    { `registerInfo` }`
+
+---
+
+## LOGIN API 
+
+##### Example Data:
+```
+loginInfo ={
+    "username": "string",
+    "password": "string"
 }
-6) DELETE `${URL}/api/users/${UserId}`, `{
-    headers: {`Authorization`: token}
-}`
+```
 
- Contact api endpoints
-1) POST `${URL}/api/register`, `{ 
-	 "username": "", 
-	 "password": ""
-}`
+### POST
+`${URL}/api/login, 
+    { `loginInfo` }`
 
- 1) POST `${URL}/api/login`, `{ 
-	 "username": "", 
-	 "password": ""
-}`
+---
 
- Contact api endpoints
+---
+# Users api endpoints
 
+## CREATE USER API
+
+##### Example Data:
+```
+userInfo = {
+    "username": "string",
+    "password": "string",
+    "name": "string",
+    "phone": "string",
+    "email": "string",
+    "address": "string"
+}
+```
+### POST
+
+`${URL}/api/users, 
+    {`userInfo`}
+    { headers: {Authorization: `token`} }`
+
+---
+
+## FIND ALL USERS API
+
+### GET
+`${URL}/api/users, 
+    { headers: {Authorization: `token`} }`
+
+---
+
+## FIND USERS BY ID API
+
+### GET
+`${URL}/api/users/${`UserId`}, 
+    { headers: {Authorization: `token`} }`
+
+---
+
+## FIND ALL CONTACTS FOR A USER 
+
+### GET
+`${URL}/api/users/${`UserId`}/contacts, 
+    { headers: {Authorization: `token`} }`
+
+---
+
+## UPDATE USER INFORMATION
+
+##### Example Data:
+ ```
+ updatedInfo = {
+    "username": "string",
+    "password": "string",
+    "name": "string",
+    "phone": "string",
+    "email": "string",
+    "address": "string"
+}
+ ```
+
+### PUT
+`${URL}/api/users/${UserId}, 
+   {`updatedInfo`},
+   {  headers: {Authorization: `token`} }`
+
+---
+
+## DELETE USER INFORMATION
+
+### DELETE
+- `${URL}/api/users/${UserId}, 
+    { headers: {Authorization: `token`} }`
+
+---
+---
+# Contact api endpoints
+
+## CREATE A NEW CONTACT 
+
+##### Example Data:
+```
  contactInfo ={ 
 	 "name": "admin2", 
 	 "phone": "1234567890",
@@ -53,17 +129,33 @@ NOTE: Username and password are required; name, phone, email, and address are op
      "notes": "likes beach stuff",
 	 "user_id": 1
 }
+```
 
- 1) POST `${URL}/api/contacts`, '{contactInfo}', `{
-        headers: {'Authorization': token}
-      }`
-2) GET `${URL}/api/contacts`, `{
-        headers: {'Authorization': token}
-      }`
-3) GET `${URL}/api/contacts/${id}`, `{
-        headers: {'Authorization': token}
-      }`
+### POST
+- `${URL}/api/contacts, {`contactInfo`}, 
+    { headers: {Authorization: `token`} }`
 
+---
+
+## FIND ALL CONTACTS 
+
+### GET
+- `${URL}/api/contacts, 
+{ headers: {`Authorization: token`} }`
+
+---
+
+## FIND CONTACT BY ID 
+### GET
+- `${URL}/api/contacts/${`id`}, 
+    { headers: {Authorization: `token`} }`
+
+---
+
+## UPDATE CONTACT INFORMATION 
+
+##### Example Data:
+```
  updatedInfo =     {
         "name": "admin2",
         "phone": "1234567890",
@@ -73,8 +165,86 @@ NOTE: Username and password are required; name, phone, email, and address are op
         "notes": "likes beach stuff",
         "user_id": 1
     }
+```
 
- 4) PUT `${URL}/api/contacts/${id}`, '{updatedInfo}', `{
-        headers: {'Authorization': token}
-      }`
-5) DELETE `${URL}/api/contacts/${id}`
+### PUT
+- `${URL}/api/contacts/${`id`}, 
+    {`updatedInfo`}, 
+    {  headers: {Authorization: `token`} }`
+    
+---
+
+## DELETE CONTACT INFORMATION
+
+### DELETE
+- `${URL}/api/contacts/${`id`},
+    {  headers: {Authorization: `token`} }`
+
+---
+---
+# Action api endpoints
+
+## CREATE NEW ACTION
+
+##### Example Data:
+```
+ actionInfo ={ 
+	 "name": "admin2", 
+	 "phone": "1234567890",
+     "email": "test@email.com",
+     "address": "123 street",
+     "group": "friends",
+     "notes": "likes beach stuff",
+	 "user_id": 1
+}
+```
+
+### POST
+- `${URL}/api/actions, {`actionInfo`}, 
+    { headers: {Authorization: `token`} }`
+
+---
+
+## FIND ALL ACTIONS 
+
+### GET
+- `${URL}/api/actions, 
+    { headers: {`Authorization: token`} }`
+
+---
+
+## FIND ACTIONS BY ID 
+
+### GET
+- `${URL}/api/actions/${`id`}, 
+    { headers: {Authorization: `token`} }`
+
+---
+
+## UPDATE ACTION INFORMATION
+
+##### Example Data:
+```
+ updatedInfo =     {
+        "name": "admin2",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 street",
+        "group": "friends",
+        "notes": "likes beach stuff",
+        "user_id": 1
+    }
+```
+
+### PUT
+- `${URL}/api/actions/${`id`}, 
+    {`updatedInfo`}, 
+    {  headers: {Authorization: `token`} }`
+    
+---
+
+## DELETE AN ACTION
+
+### DELETE
+- `${URL}/api/actions/${`id`},
+    {  headers: {Authorization: `token`} }`
