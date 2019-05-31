@@ -1,6 +1,6 @@
 # randomActs-BE
-
-##Table Of Contents
+## <a name="tableofcontents"></a>
+# Table Of Contents
 
 - [Deployment](#deployment)
 - [Tech Stack](#techStack)
@@ -15,6 +15,7 @@
 
 ## <a name="techStack"></a>
 # Tech Stack 
+- [Table of Contents](#tableofcontents)
 
 - git - Command line tool used for version control.
 - github - Webhosting site for containing repositories and supporting git commands.
@@ -36,6 +37,7 @@
 
 ## <a name="projectSummary"></a>
 # Project Summary 
+- [Table of Contents](#tableofcontents)
 
 We struggle to .....
 
@@ -46,6 +48,7 @@ https://github.com/random-kindness-generator/randomActs-BE/blob/DevEB/apiPaths.m
 
 ## <a name="tableSchema"></a>
 # Table Schema 
+- [Table of Contents](#tableofcontents)
 
 ### users
 
