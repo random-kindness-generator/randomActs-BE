@@ -7,7 +7,7 @@ router.post("/", restricted, async (req, res) => {
     try {
       const action = req.body;
       const inserted = await db.add(action);
-      res.status(201).json(inserted);
+      res.status(201).json({ message: "Action created: ", action});
     } catch (error) {
       res
         .status(500)
@@ -47,7 +47,7 @@ router.get("/:id", restricted, async (req, res) => {
 router.put("/:id", restricted, async (req, res) => {
     const changes = req.body;
 
-    if (changes.action) {
+    if (changes) {
       try {
         const updated = await db.update(req.params.id, changes);
         if (updated) {
@@ -64,7 +64,7 @@ router.put("/:id", restricted, async (req, res) => {
       }
     } else {
       res.status(400).json({
-        message: "Please provide the name of the action"
+        message: "Please provide changes to update the actions"
       });
     }
 });
