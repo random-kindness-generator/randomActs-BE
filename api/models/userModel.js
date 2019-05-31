@@ -29,7 +29,7 @@ function findByEmail(email) {
 }
 //changed this to async
 async function add(user) {
-  const [id] = await db('users').insert(user);
+  const [id] = await db('users').insert(user).into('users');
 
   return findById(id);
 }
