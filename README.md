@@ -51,39 +51,7 @@ We struggle to .....
 
 # api/auth <a name="authEndpoints"></a>
 
----
 
-#### POST `api/login`
-
-##### Required (unless marked optional):
-
-**Header**: default
-**URL Params**: none
-**Body**:
-username: string
-password: string
-
-##### Example Request:
-
-```
-Header: default
-URL Params: none
-Body:
-{
-    username: 'niceguy',
-    password: 'password'
-}
-```
-
-##### Example Response:
-
-```
-{
-    "message": "Welcome niceguy!",
-    "userId": 1,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-}
-```
 
 ---
 
@@ -126,5 +94,84 @@ Body:
     "address": "null"
 }
 ```
+---
+
+#### POST `api/login`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+Header: default
+URL Params: none
+Body:
+{
+    username: 'niceguy',
+    password: 'password'
+}
+```
+
+##### Example Response:
+
+```
+{
+    "message": "Welcome niceguy!",
+    "userId": 1,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+---
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
+
+# Table Schema <a name="tableSchema"></a>
+
+### users
+
+| Field      | Data Type | Modifiers                                   |
+| ---------- | --------- | ------------------------------------------- |
+| id         | integer   | PK, auto-increment                          |
+| username   | string    | required, unique, limited to 255 characters |
+| password   | string    | required, limited to 255 characters         |
+| name       | string    | optional, limited to 255 characters         |
+| email      | string    | optional, limited to 255 characters         |
+| phone      | string    | optional, limited to 255 characters         |
+| address    | string    | optional, limited to 500 characters         |
+
+### contacts
+
+| Field       | Data Type | Modifiers                                                      |
+| ----------- | --------- | -------------------------------------------------------------- |
+| id          | integer   | PK, auto-increment                                             |
+| name        | string    | required, limited to 255 characters |
+| email       | string    | optional, limited to 255 characters                            |
+| phone       | string    | optional, limited to 255 characters                            |
+| address     | string    | optional, limited to 500 characters                            |
+| group       | string    | optional, limited to 500 characters                            |
+| user_id     | integer   | required, FK of users PK, onDelete: cascade, onUpdate: cascade |
+
+### actions
+
+| Field          | Data Type | Modifiers                                  |
+| -------------- | --------- | ------------------------------------------ |
+| id             | integer   | PK, auto-increment                         |
+| action         | string    | required, limited to 500 characters |
