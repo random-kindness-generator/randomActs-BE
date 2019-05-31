@@ -5,6 +5,7 @@ module.exports = {
   findById,
   findByUser,
   add,
+  addContact,
   update,
   remove
 };
@@ -19,7 +20,7 @@ async function findByUser(user_id) {
   return await db('contacts').where({user_id})
 }
 async function add(contact) {
-  const [id] = await db('contacts').insert(contact);
+  const [id] = await db('contacts').insert(contact).into('contacts');
 
   return findById(id);
 }
@@ -33,3 +34,8 @@ function remove(id) {
     .where({ id })
     .delete();
 }
+function addContact(contact) {
+    return db('contacts')
+    .insert(contact)
+    .into('contacts');
+    }
