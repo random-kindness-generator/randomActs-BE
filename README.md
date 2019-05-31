@@ -1,18 +1,21 @@
 # randomActs-BE
-
-##Table Of Contents
+## <a name="tableofcontents"></a>
+# Table Of Contents
 
 - [Deployment](#deployment)
 - [Tech Stack](#techStack)
 - [Project Summary](#projectSummary)
-- [Endpoints (for frontend usage)](#frontend) are located in apiPaths.md
+- [Endpoints (for frontend usage)](#frontend)
 - [Table Schema](#tableSchema)
 
-# Deployment <a name="deployment"></a>
+## <a name="deployment"></a>
+# Deployment 
 
 - [Backend Deployment](https://random-acts0519.herokuapp.com)
 
-# Tech Stack <a name="techStack"></a>
+## <a name="techStack"></a>
+# Tech Stack 
+[Table of Contents](#tableofcontents)
 
 - git - Command line tool used for version control.
 - github - Webhosting site for containing repositories and supporting git commands.
@@ -32,12 +35,20 @@
 - jest - Test-runner for model and endpoint testing.
 - supertest - Additional testing methods for endpoints.
 
-# Project Summary <a name="projectSummary"></a>
+## <a name="projectSummary"></a>
+# Project Summary 
+[Table of Contents](#tableofcontents)
 
 We struggle to .....
 
+## <a name="frontend"></a>
+ # Endpoints (for frontend usage) 
+ are located in the apiPaths.md file:
+https://github.com/random-kindness-generator/randomActs-BE/blob/DevEB/apiPaths.md
 
-# Table Schema <a name="tableSchema"></a>
+## <a name="tableSchema"></a>
+# Table Schema 
+[Table of Contents](#tableofcontents)
 
 ### users
 

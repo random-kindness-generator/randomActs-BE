@@ -1,5 +1,19 @@
  # Endpoints (for frontend usage) <a name="frontend"></a>
- 
+
+Additional documentaion for the backend can be found here: https://github.com/random-kindness-generator/randomActs-BE/tree/DevEB#frontend
+
+---
+## <a name="tableofcontents"></a>
+# Table Of Contents
+
+- [Register](#register)
+- [Login](#login)
+- [Users](#users)
+- [Contacts](#contacts)
+- [Actions](#actions)
+
+---
+
  ### Global CRUD Rules
 
 - Authentication: **All** endpoints **except** api/register and api/login require a valid token to be passed in the request header.
@@ -7,7 +21,7 @@
 ---
 
  # Auth api endpoints
-
+## <a name="register"></a>
 ## REGISTER API 
 
 ##### Example Data:
@@ -28,7 +42,7 @@
     { `registerInfo` }`
 
 ---
-
+## <a name="login"></a>
 ## LOGIN API 
 
 ##### Example Data:
@@ -46,8 +60,9 @@ loginInfo ={
 ---
 
 ---
+## <a name="users"></a>
 # Users api endpoints
-
+[Table of Contents](#tableofcontents)
 ## CREATE USER API
 
 ##### Example Data:
@@ -122,8 +137,9 @@ userInfo = {
 
 ---
 ---
+## <a name="contacts"></a>
 # Contact api endpoints
-
+[Table of Contents](#tableofcontents)
 ## CREATE A NEW CONTACT 
 
 ##### Example Data:
@@ -190,8 +206,9 @@ userInfo = {
 
 ---
 ---
+## <a name="actions"></a>
 # Action api endpoints
-
+[Table of Contents](#tableofcontents)
 ## CREATE NEW ACTION
 
 ##### Example Data:
