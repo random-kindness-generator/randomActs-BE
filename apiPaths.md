@@ -1,5 +1,9 @@
  # Endpoints (for frontend usage) <a name="frontend"></a>
- 
+
+Additional documentaion for the backend can be found here: https://github.com/random-kindness-generator/randomActs-BE/tree/DevEB#frontend
+
+---
+
  ### Global CRUD Rules
 
 - Authentication: **All** endpoints **except** api/register and api/login require a valid token to be passed in the request header.

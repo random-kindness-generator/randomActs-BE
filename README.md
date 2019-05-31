@@ -36,7 +36,8 @@
 
 We struggle to .....
 
- # Endpoints (for frontend usage) <a name="frontend"></a>
+## <a name="frontend"></a>
+ # Endpoints (for frontend usage) 
  are located in the apiPaths.md file:
 https://github.com/random-kindness-generator/randomActs-BE/blob/DevEB/apiPaths.md
 
