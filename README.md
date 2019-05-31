@@ -5,7 +5,7 @@
 - [Deployment](#deployment)
 - [Tech Stack](#techStack)
 - [Project Summary](#projectSummary)
-- [Endpoints (for frontend usage)](#https://github.com/random-kindness-generator/randomActs-BE/blob/master/apiPaths.md)
+- [Endpoints (for frontend usage)](#frontend)
 - [Table Schema](#tableSchema)
 
 # Deployment <a name="deployment"></a>
