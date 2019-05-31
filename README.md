@@ -36,6 +36,9 @@
 
 We struggle to .....
 
+ # Endpoints (for frontend usage) <a name="frontend"></a>
+ are located in the apiPaths.md file:
+https://github.com/random-kindness-generator/randomActs-BE/blob/DevEB/apiPaths.md
 
 # Table Schema <a name="tableSchema"></a>
 
