@@ -131,52 +131,79 @@ Body:
 
 # api/users <a name="usersEndpoints"></a>
 
-#### POST `api/`
+#### GET `api/users/`
 
 ##### Required (unless marked optional):
 
 **Header**: default
 **URL Params**: none
-**Body**:
-username: string
-password: string
+**Body**: none
 
 ##### Example Request:
 
 ```
-
+Header: default
+URL Params: none
+Body: none
 
 ```
 
 ##### Example Response:
 
 ```
-
+[
+    {
+        "id": 1,
+        "username": "niceguy",
+        "password": "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS",
+        "name": "Mr. Nice Guy",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 Nice Drive"
+    },
+    {
+        "id": 2,
+        "username": "nicegal",
+        "password": "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS",
+        "name": "Mr. Nice Gal",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 Nice Drive"
+    }
+]
 
 ```
 ---
 
-#### GET `api/`
+#### GET `api/users/:id`
 
 ##### Required (unless marked optional):
 
 **Header**: default
-**URL Params**: none
-**Body**:
-username: string
-password: string
+**URL Params**: id,integer
+**Body**: none
 
 ##### Example Request:
 
 ```
-
+Header: default
+URL Params: 1
+Body: none
 
 ```
 
 ##### Example Response:
 
 ```
-
+{
+    "id": 1,
+    "username": "niceguy",
+    "password": "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS",
+    "name": "Mr. Nice Guy",
+    "phone": "1234567890",
+    "email": "test@email.com",
+    "address": "123 Nice Drive"
+}
 
 ```
 ---
@@ -194,39 +221,54 @@ password: string
 ##### Example Request:
 
 ```
-
+Header: default
+URL Params: 1
+Body:
+{
+        "id": 1,
+        "username": "niceguy7",
+        "password": "password",
+        "name": "Mr. Nice Guy",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 Nice Drive"
+    }
 
 ```
 
 ##### Example Response:
 
 ```
-
+{
+    "message": "1 user(s) updated"
+}
 
 ```
 ---
 
-#### delete `api/`
+#### DELETE `api/users`
 
 ##### Required (unless marked optional):
 
 **Header**: default
 **URL Params**: none
-**Body**:
-username: string
-password: string
+**Body**: none
 
 ##### Example Request:
 
 ```
-
+Header: default
+URL Params: 1
+Body: none
 
 ```
 
 ##### Example Response:
 
 ```
-
+{
+    "message": "user has been deleted"
+}
 
 ```
 ---
