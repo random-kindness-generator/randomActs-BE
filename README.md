@@ -49,13 +49,13 @@ We struggle to .....
 
 ---
 
-# api/auth <a name="authEndpoints"></a>
-
+# api/authentication <a name="authEndpoints"></a>
+##### (for Register and Login)
 
 
 ---
 
-#### POST `api/auth/register`
+#### POST `api/register`
 
 ##### Required (unless marked optional):
 
@@ -129,18 +129,310 @@ Body:
 ```
 ---
 
+# api/users <a name="usersEndpoints"></a>
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
 
 
+```
+
+##### Example Response:
+
+```
 
 
+```
+---
+
+#### GET `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
 
 
+```
+
+##### Example Response:
+
+```
 
 
+```
+---
+
+#### PUT `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
 
 
+```
+
+##### Example Response:
+
+```
 
 
+```
+---
+
+#### delete `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+# api/contacts <a name="contactsEndpoints"></a>
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+# api/actions <a name="actionsEndpoints"></a>
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
 ---
 
 # Table Schema <a name="tableSchema"></a>
