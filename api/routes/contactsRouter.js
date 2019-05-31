@@ -13,6 +13,7 @@ router.post("/", restricted, async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: "A problem occured"})
     }
+}
 //============================Read Router
 router.get("/", restricted, async (req, res) => {
   try {
