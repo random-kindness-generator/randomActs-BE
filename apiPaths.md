@@ -3,6 +3,16 @@
 Additional documentaion for the backend can be found here: https://github.com/random-kindness-generator/randomActs-BE/tree/DevEB#frontend
 
 ---
+## <a name="tableofcontents"></a>
+# Table Of Contents
+
+- [Register](#register)
+- [Login](#login)
+- [Users](#users)
+- [Contacts](#contacts)
+- [Actions](#actions)
+
+---
 
  ### Global CRUD Rules
 
@@ -11,7 +21,7 @@ Additional documentaion for the backend can be found here: https://github.com/ra
 ---
 
  # Auth api endpoints
-
+## <a name="register"></a>
 ## REGISTER API 
 
 ##### Example Data:
@@ -32,7 +42,7 @@ Additional documentaion for the backend can be found here: https://github.com/ra
     { `registerInfo` }`
 
 ---
-
+## <a name="login"></a>
 ## LOGIN API 
 
 ##### Example Data:
@@ -50,8 +60,9 @@ loginInfo ={
 ---
 
 ---
+## <a name="users"></a>
 # Users api endpoints
-
+[Table of Contents](#tableofcontents)
 ## CREATE USER API
 
 ##### Example Data:
@@ -126,8 +137,9 @@ userInfo = {
 
 ---
 ---
+## <a name="contacts"></a>
 # Contact api endpoints
-
+[Table of Contents](#tableofcontents)
 ## CREATE A NEW CONTACT 
 
 ##### Example Data:
@@ -194,8 +206,9 @@ userInfo = {
 
 ---
 ---
+## <a name="actions"></a>
 # Action api endpoints
-
+[Table of Contents](#tableofcontents)
 ## CREATE NEW ACTION
 
 ##### Example Data:
