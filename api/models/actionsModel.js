@@ -15,7 +15,7 @@ function findById(id) {
   return db(`actions`).where({ id });
 }
 function add(action) {
-  return db('actions').insert(action);
+  return db('actions').insert(action).into('actions');
 }
 function update(id, changes) {
   return db(`actions`)
