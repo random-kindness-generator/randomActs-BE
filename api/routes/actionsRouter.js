@@ -4,20 +4,15 @@ const db = require("../models/actionsModel");
 
 //============================Create Router
 router.post("/", restricted, async (req, res) => {
-  const action = req.body;
-
-  if (action.action) {
     try {
+      const action = req.body;
       const inserted = await db.add(action);
       res.status(201).json(inserted);
     } catch (error) {
       res
         .status(500)
-        .json({ message: "We ran into an error creating the action" });
+        .json({ message: "We ran into an error creating the action:", error });
     }
-  } else {
-    res.status(400).json({ message: "Please provide name of the action" });
-  }
 });
 
 //============================Read Router
