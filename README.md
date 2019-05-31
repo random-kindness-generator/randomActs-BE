@@ -49,45 +49,13 @@ We struggle to .....
 
 ---
 
-# api/auth <a name="authEndpoints"></a>
+# api/authentication <a name="authEndpoints"></a>
+##### (for Register and Login)
+
 
 ---
 
-#### POST `api/login`
-
-##### Required (unless marked optional):
-
-**Header**: default
-**URL Params**: none
-**Body**:
-username: string
-password: string
-
-##### Example Request:
-
-```
-Header: default
-URL Params: none
-Body:
-{
-    username: 'niceguy',
-    password: 'password'
-}
-```
-
-##### Example Response:
-
-```
-{
-    "message": "Welcome niceguy!",
-    "userId": 1,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-}
-```
-
----
-
-#### POST `api/auth/register`
+#### POST `api/register`
 
 ##### Required (unless marked optional):
 
@@ -126,5 +94,418 @@ Body:
     "address": "null"
 }
 ```
-
 ---
+
+#### POST `api/login`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+Header: default
+URL Params: none
+Body:
+{
+    username: 'niceguy',
+    password: 'password'
+}
+```
+
+##### Example Response:
+
+```
+{
+    "message": "Welcome niceguy!",
+    "userId": 1,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+---
+
+# api/users <a name="usersEndpoints"></a>
+
+#### GET `api/users/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**: none
+
+##### Example Request:
+
+```
+Header: default
+URL Params: none
+Body: none
+
+```
+
+##### Example Response:
+
+```
+[
+    {
+        "id": 1,
+        "username": "niceguy",
+        "password": "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS",
+        "name": "Mr. Nice Guy",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 Nice Drive"
+    },
+    {
+        "id": 2,
+        "username": "nicegal",
+        "password": "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS",
+        "name": "Mr. Nice Gal",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 Nice Drive"
+    }
+]
+
+```
+---
+
+#### GET `api/users/:id`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: id,integer
+**Body**: none
+
+##### Example Request:
+
+```
+Header: default
+URL Params: 1
+Body: none
+
+```
+
+##### Example Response:
+
+```
+{
+    "id": 1,
+    "username": "niceguy",
+    "password": "$2a$10$BeUlzgN.uJacLsBNQIfyv.ED7FyFAaT0IRQSDMzW8LB7Us0qJAfUS",
+    "name": "Mr. Nice Guy",
+    "phone": "1234567890",
+    "email": "test@email.com",
+    "address": "123 Nice Drive"
+}
+
+```
+---
+
+#### PUT `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+Header: default
+URL Params: 1
+Body:
+{
+        "id": 1,
+        "username": "niceguy7",
+        "password": "password",
+        "name": "Mr. Nice Guy",
+        "phone": "1234567890",
+        "email": "test@email.com",
+        "address": "123 Nice Drive"
+    }
+
+```
+
+##### Example Response:
+
+```
+{
+    "message": "1 user(s) updated"
+}
+
+```
+---
+
+#### DELETE `api/users`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**: none
+
+##### Example Request:
+
+```
+Header: default
+URL Params: 1
+Body: none
+
+```
+
+##### Example Response:
+
+```
+{
+    "message": "user has been deleted"
+}
+
+```
+---
+
+# api/contacts <a name="contactsEndpoints"></a>
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+# api/actions <a name="actionsEndpoints"></a>
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+#### POST `api/`
+
+##### Required (unless marked optional):
+
+**Header**: default
+**URL Params**: none
+**Body**:
+username: string
+password: string
+
+##### Example Request:
+
+```
+
+
+```
+
+##### Example Response:
+
+```
+
+
+```
+---
+
+# Table Schema <a name="tableSchema"></a>
+
+### users
+
+| Field      | Data Type | Modifiers                                   |
+| ---------- | --------- | ------------------------------------------- |
+| id         | integer   | PK, auto-increment                          |
+| username   | string    | required, unique, limited to 255 characters |
+| password   | string    | required, limited to 255 characters         |
+| name       | string    | optional, limited to 255 characters         |
+| email      | string    | optional, limited to 255 characters         |
+| phone      | string    | optional, limited to 255 characters         |
+| address    | string    | optional, limited to 500 characters         |
+
+### contacts
+
+| Field       | Data Type | Modifiers                                                      |
+| ----------- | --------- | -------------------------------------------------------------- |
+| id          | integer   | PK, auto-increment                                             |
+| name        | string    | required, limited to 255 characters |
+| email       | string    | optional, limited to 255 characters                            |
+| phone       | string    | optional, limited to 255 characters                            |
+| address     | string    | optional, limited to 500 characters                            |
+| group       | string    | optional, limited to 500 characters                            |
+| user_id     | integer   | required, FK of users PK, onDelete: cascade, onUpdate: cascade |
+
+### actions
+
+| Field          | Data Type | Modifiers                                  |
+| -------------- | --------- | ------------------------------------------ |
+| id             | integer   | PK, auto-increment                         |
+| action         | string    | required, limited to 500 characters |

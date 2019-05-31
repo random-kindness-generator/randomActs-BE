@@ -65,7 +65,6 @@ NOTE: Username and password are required; name, phone, email, and address are op
       }`
 
  updatedInfo =     {
-        "id": 1,
         "name": "admin2",
         "phone": "1234567890",
         "email": "test@email.com",
