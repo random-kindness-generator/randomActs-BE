@@ -1,3 +1,11 @@
+ # Endpoints (for frontend usage) <a name="frontend"></a>
+ 
+ ### Global CRUD Rules
+
+- Authentication: **All** endpoints **except** api/register and api/login require a valid token to be passed in the request header.
+
+---
+
  # Auth api endpoints
 
 ## REGISTER API 
